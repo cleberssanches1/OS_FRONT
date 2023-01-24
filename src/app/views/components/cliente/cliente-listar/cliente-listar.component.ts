@@ -2,28 +2,28 @@ import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Tecnico } from 'src/app/models/tecnico';
-import { TecnicoService } from 'src/app/services/tecnico.service';
+import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-tecnico-listar',
-  templateUrl: './tecnico-listar.component.html',
-  styleUrls: ['./tecnico-listar.component.css'],
+  selector: 'app-cliente-listar',
+  templateUrl: './cliente-listar.component.html',
+  styleUrls: ['./cliente-listar.component.css']
 })
-export class TecnicoListarComponent implements AfterViewInit {
-  tecnicos: Tecnico[] = [];
+export class ClienteListarComponent  implements AfterViewInit {
+  cliente: Cliente[] = [];
 
   displayedColumns: string[] = ['id', 'nome', 'cpf', 'telefone', 'action'];
-  dataSource = new MatTableDataSource<Tecnico>(this.tecnicos);
+  dataSource = new MatTableDataSource<Cliente>(this.cliente);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private service: TecnicoService, private router: Router) {}
+  constructor(private service: ClienteService, private router: Router) {}
 
   findAll(): void {
     this.service.findAll().subscribe((resposta) => {
-      this.tecnicos = resposta;
-      this.dataSource = new MatTableDataSource<Tecnico>(this.tecnicos);
+      this.cliente = resposta;
+      this.dataSource = new MatTableDataSource<Cliente>(this.cliente);
       this.dataSource.paginator = this.paginator;
 
       // console.log(this.tecnicos)
@@ -35,6 +35,6 @@ export class TecnicoListarComponent implements AfterViewInit {
   }
 
   navigateToCreate() : void{
-    this.router.navigate(['tecnicos/create'])
+    this.router.navigate(['clientes/criar'])
   }
 }

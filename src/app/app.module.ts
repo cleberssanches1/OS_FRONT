@@ -27,11 +27,25 @@ import { FooterComponent } from './views/components/templates/footer/footer.comp
 import { NavComponent } from './views/components/templates/nav/nav.component';
 import { HomeComponent } from './views/components/home/home.component';
 import { TecnicoListarComponent } from './views/components/tecnico/tecnico-listar/tecnico-listar.component';
+import { TecnicoCreateComponent } from './views/components/tecnico/tecnico-create/tecnico-create.component';
+import { TecnicoUpdateComponent } from './views/components/tecnico/tecnico-update/tecnico-update.component';
+import { TecnicoDeleteComponent } from './views/components/tecnico/tecnico-delete/tecnico-delete.component';
+import { ClienteListarComponent } from './views/components/cliente/cliente-listar/cliente-listar.component';
+import { ClienteCriarComponent } from './views/components/cliente/cliente-criar/cliente-criar.component';
+import { ClienteUpdateComponent } from './views/components/cliente/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './views/components/cliente/cliente-delete/cliente-delete.component';
+import { OrdemListarComponent } from './views/components/os/ordem-listar/ordem-listar.component';
+import { OrdemUpdateComponent } from './views/components/os/ordem-update/ordem-update.component';
+import { OrdemCriarComponent } from './views/components/os/ordem-criar/ordem-criar.component';
+import { OrdemDeleteComponent } from './views/components/os/ordem-delete/ordem-delete.component';
+import { OsViewComponent } from './views/components/os/os-view/os-view.component';
+
+import {MatMenuModule} from '@angular/material';
 
 @NgModule({
   declarations: [
     AppComponent,    
-    HeaderComponent, FooterComponent, NavComponent, HomeComponent, TecnicoListarComponent
+    HeaderComponent, FooterComponent, NavComponent, HomeComponent, TecnicoListarComponent, TecnicoCreateComponent, TecnicoUpdateComponent, TecnicoDeleteComponent, ClienteListarComponent, ClienteCriarComponent, ClienteUpdateComponent, ClienteDeleteComponent, OrdemListarComponent, OrdemUpdateComponent, OrdemCriarComponent, OrdemDeleteComponent, OsViewComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +71,8 @@ import { TecnicoListarComponent } from './views/components/tecnico/tecnico-lista
     MatInputModule,
     MatDatepickerModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

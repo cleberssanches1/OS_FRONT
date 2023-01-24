@@ -1,0 +1,18 @@
+.container{
+    width: 70%;
+    margin: auto;
+}
+
+h1{
+    text-align:  center;
+}
+
+#abertura{
+    text-align: end;
+    margin-top: 1rem;
+}
+
+button{
+    width: 100%;
+    margin-top: .5rem;
+}
